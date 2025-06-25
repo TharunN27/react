@@ -4,6 +4,7 @@ import ListUser from './ListUser.jsx';
 import { Routes, Route } from 'react-router-dom'
 import About from "./Pages/About.jsx"
 import Contact from "./Pages/Contact.jsx"
+import {Link} from "react-router-dom"
 function App() {
   let [user, setUser] = useState({ name: "Tharun", username: "Tharun" })
   let [userList, setUserList] = useState([]);
@@ -45,7 +46,12 @@ function App() {
         </table>
       </div>
       <ListUser />
+      <nav>
+        <Link to='./About'>About us</Link>
+        <Link to='./Contact'>Contact us</Link>
+      </nav>
       <Routes>
+
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
       </Routes>
